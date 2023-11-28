@@ -22,7 +22,8 @@ def Pr1():
 def Pr3():
     aa = open("in.txt","r")
     text = aa.read()
-    ac = open("dict.txt","w")
+    ac = open("dict.txt","a")
+    
     ab = open("dict.txt","r")
     text2 = ab.read()
     
@@ -37,10 +38,23 @@ def Pr3():
     print(text)
     print(text2)
     text3 = ""
+    '''
     for i in text:
-        if i not in text2 and i not in text3:
-            text3 +=i
+        if i not in text2 :
+            ac.write(i+" ")
             print(i)
+    
+    no = 0
+    for i in text:
+        if no==1:
+            text2.append(text[i-1])
+        for j in text2:
+            if i==j:
+                no =1
+                '''
+    print(text2)
+    print(text)
+
     text2 += text3
     ac.write(text2)
     aa.close()
