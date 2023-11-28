@@ -36,10 +36,8 @@ def Pr3():
     text2.split(" ")
     text3 = ""
     for i in text:
-        if i in text2:
-            pass
-        else:
-            text3 +=text2
+        if i not in text2:
+            text3 +=i
     text2 += text3
     ac.write(text2)
     aa.close()
