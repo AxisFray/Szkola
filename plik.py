@@ -28,16 +28,19 @@ def Pr3():
     
     for i in text:
         if i=="," or i=="." or i==";" or i=='"':
-            i=""
-    text.replace(" ",".")
+            i="."
+    
     text.lower()
-    text.strip(" ")
-    text.split(".")
+    text.strip(".")
+    text.split(" ")
     text2.split(" ")
+    print(text)
+    print(text2)
     text3 = ""
     for i in text:
         if i not in text2:
             text3 +=i
+            print(i)
     text2 += text3
     ac.write(text2)
     aa.close()
