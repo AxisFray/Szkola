@@ -17,22 +17,26 @@ def Pr1():
     srednia = suma/len(x)
     for i in x:
         wariancja += (srednia-i)**2
-    wariancja =wariancja/6
+    wariancja =wariancja/len(x)
     print(f"Suma to:{suma},Srednia to:{srednia},najwieksza liczba to:{maxx}, a najmniejsza:{minn}, wariancja to:{wariancja}")
 def Pr3():
     aa = open("in.txt","r")
     ab = open("dict.txt","r")
-    ac = open("dict.txt","a")
+    ac = open("dict.txt","w")
     text = aa.read()
+    text2 = ab.read()
     for i in text:
         if i=="," or i=="." or i==";" or i=='"':
             i=""
     text.lower()
     text.split(" ")
-    aa.split(" ")
-    for i in aa:
-        if i not in ab:
-            ac.write(" "+i)
+    text2.split(" ")
+    text3 = ""
+    for i in text:
+        if i not in text2:
+            text3 +=i
+    text2 += text3
+    ac.write(text2)
     aa.close()
     ab.close()
     ac.close()
