@@ -38,7 +38,7 @@ def Pr3():
     print(text2)
     text3 = ""
     for i in text:
-        if i not in text2:
+        if i not in text2 and i not in text3:
             text3 +=i
             print(i)
     text2 += text3
