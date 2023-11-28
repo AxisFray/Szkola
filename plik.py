@@ -21,21 +21,25 @@ def Pr1():
     print(f"Suma to:{suma},Srednia to:{srednia},najwieksza liczba to:{maxx}, a najmniejsza:{minn}, wariancja to:{wariancja}")
 def Pr3():
     aa = open("in.txt","r")
-    
+    text = aa.read()
     ac = open("dict.txt","w")
     ab = open("dict.txt","r")
-    text = aa.read()
     text2 = ab.read()
+    
     for i in text:
         if i=="," or i=="." or i==";" or i=='"':
             i=""
+    text.replace(" ",".")
     text.lower()
-    text.split(" ")
+    text.strip(" ")
+    text.split(".")
     text2.split(" ")
     text3 = ""
     for i in text:
-        if i not in text2:
-            text3 +=i
+        if i in text2:
+            pass
+        else:
+            text3 +=text2
     text2 += text3
     ac.write(text2)
     aa.close()
